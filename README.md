@@ -52,7 +52,7 @@ class Frontend {
 	
 	public function script_type_module($tag, $handle, $src): mixed {
 		if(str_starts_with($handle, 'comet-')) {
-			$rootDir = site_url() . '/wp-content/plugins/simple-document-portal/vendor/doubleedesign/comet-responsive-panels/dist';
+			$rootDir = '/wp-content/plugins/simple-document-portal/vendor/doubleedesign/comet-responsive-panels/dist';
 			$src = esc_url($src);
 			$tag = "<script type=\"module\" data-base-path=\"$rootDir\" src=\"" . $src . "\" id=\"$handle\"></script>";
 		}	
@@ -61,3 +61,5 @@ class Frontend {
 	}
 }
 ```
+
+An example implementation can be seen in the [Simple Document Portal](https://github.com/doubleedesign/simple-document-portal) plugin.
