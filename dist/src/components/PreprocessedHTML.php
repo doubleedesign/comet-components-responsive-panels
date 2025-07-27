@@ -6,13 +6,13 @@ namespace Doubleedesign\Comet\Core;
  * so it can be inserted into a Comet component as an "innerComponent"
  */
 class PreprocessedHTML {
-    private string $content;
+	private string $content;
 
-    public function __construct(string $content) {
-        $this->content = $content;
-    }
+	function __construct(string $content) {
+		$this->content = $content;
+	}
 
-    public function render(): void {
-        echo Utils::sanitise_content($this->content);
-    }
+	public function render(): void {
+		echo \Utils::sanitise_content($this->content);
+	}
 }
