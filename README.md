@@ -22,11 +22,11 @@ You will need to load the CSS and JS assets for the component into your project,
 - `/vendor/doubleedesign/comet-responsive-panels/dist/src/components/responsive-panels.css`
 - `/vendor/doubleedesign/comet-responsive-panels/dist/src/components/responsive-panels.js`
 
-The JS file also needs to be specified as a module. For example:
+The JS file also needs to be specified as a module, and a base path given for the Vue loader to pick up. For example:
 
 ```html
 
-<script type="module" src="/vendor/doubleedesign/comet-responsive-panels/dist/src/components/responsive-panels.js"></script>
+<script type="module" data-base-path="/vendor/doubleedesign/comet-responsive-panels/dist" src="/vendor/doubleedesign/comet-responsive-panels/dist/src/components/responsive-panels.js"></script>
 ```
 
 An example of how you might set up the client-side assets in a WordPress plugin is:
@@ -50,7 +50,9 @@ class Frontend {
 
     public function script_type_module($tag, $handle, $src): mixed {
         if (str_starts_with($handle, 'comet-')) {
-            $tag = '<script type="module" src="' . esc_url($src) . '" id="' . $handle . '" ></script>';
+            $rootDir = plugin_dir_url(__FILE__) . '..';
+            $basePath = $rootDir . '/vendor/doubleedesign/comet-responsive-panels/dist';
+            $tag = '<script type="module" data-base-path=' . "$basePath" . ' src="' . esc_url($src) . '" id="' . $handle . '" ></script>';
         }
 
         return $tag;
