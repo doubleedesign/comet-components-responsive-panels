@@ -1,4 +1,4 @@
-const isDev = window.location.hostname.includes('local');
+const isDev = window.location.hostname.endsWith('local') || window.location.hostname.endsWith('test');
 
 export default isDev
 	? import("./vue.esm-browser.js")

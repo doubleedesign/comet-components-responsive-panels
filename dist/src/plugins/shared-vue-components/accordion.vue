@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { PanelItem } from '@/components/ResponsivePanels/types';
+import type { PanelItem } from '../../components/ResponsivePanels/types.ts';
 
 export default {
 	name: 'Accordion',
