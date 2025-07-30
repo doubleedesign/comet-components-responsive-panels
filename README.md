@@ -62,7 +62,7 @@ class Frontend {
 		$rootDir = '/wp-content/plugins/simple-document-portal/vendor/doubleedesign/comet-responsive-panels/src';
 		$antiCacheVer = filemtime(WP_CONTENT_DIR . '/plugins/simple-document-portal/vendor/doubleedesign/comet-responsive-panels/src/components/ResponsivePanels/responsive-panels.js');
 	
-		wp_enqueue_style('comet-global', $depDir . '/src/components/global.css', [], '0.0.2');
+		wp_enqueue_style('comet-global', $depDir . '/src/components/global.css', [], '0.0.3');
 		wp_enqueue_style('comet-responsive-panels', $rootDir . '/components/ResponsivePanels/responsive-panels.css', [], $antiCacheVer);
 		wp_enqueue_script('comet-responsive-panels', $rootDir . '/components/ResponsivePanels/responsive-panels.js', [], $antiCacheVer, true);
 	}

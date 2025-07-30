@@ -1,28 +1,28 @@
 {
-    "name": "doubleedesign/comet-responsive-panels",
-    "description": "Standalone package for ResponsivePanels from the Comet Components library",
-    "version": "0.0.2",
-    "homepage": "https://cometcomponents.io",
-    "authors": [
-        {
-            "name": "Leesa Ward",
-            "email": "leesa@doubleedesign.com.au"
-        }
-    ],
-    "autoload": {
-        "classmap": [
-            "src/components/",
-            "src/components/**/"
-        ],
-        "psr-4": {
-            "Doubleedesign\\Comet\\Core\\": [
-                "src/base/traits/",
-                "src/base/components/",
-                "src/base/"
-            ]
-        }
-    },
-    "require": {
-        "doubleedesign/comet-components-launchpad": "dev-main"
-    }
+	"name": "doubleedesign/comet-responsive-panels",
+	"description": "Standalone package for ResponsivePanels from the Comet Components library",
+	"version": "0.0.3",
+	"homepage": "https://cometcomponents.io",
+	"authors": [
+		{
+			"name": "Leesa Ward",
+			"email": "leesa@doubleedesign.com.au"
+		}
+	],
+	"autoload": {
+		"classmap": [
+			"src/components/",
+			"src/components/**/"
+		],
+		"psr-4": {
+			"Doubleedesign\\Comet\\Core\\": [
+				"src/base/traits/",
+				"src/base/components/",
+				"src/base/"
+			]
+		}
+	},
+	"require": {
+		"doubleedesign/comet-components-launchpad": "dev-main"
+	}
 }
