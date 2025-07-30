@@ -80,3 +80,4 @@ class Frontend {
 ```
 
 An example implementation can be seen in the [Simple Document Portal](https://github.com/doubleedesign/simple-document-portal) plugin.
+
