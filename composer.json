@@ -27,11 +27,6 @@
         }
     },
     "require": {
-        "illuminate/view": "^10.0",
-        "illuminate/filesystem": "^10.0",
-        "illuminate/events": "^10.0",
-        "illuminate/container": "^10.0",
-        "illuminate/support": "^10.0",
-        "ezyang/htmlpurifier": "^4.18"
+        "doubleedesign/comet-standalone-launchpad": "0.0.2"
     }
 }
