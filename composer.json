@@ -11,22 +11,18 @@
     ],
     "autoload": {
         "classmap": [
-            "dist/src/components/",
-            "dist/src/components/**/"
+            "src/components/",
+            "src/components/**/"
         ],
         "psr-4": {
             "Doubleedesign\\Comet\\Core\\": [
-                "dist/src/base/types/",
-                "dist/src/base/types/",
-                "dist/src/base/attributes/",
-                "dist/src/base/traits/",
-                "dist/src/base/components/",
-                "dist/src/base/",
-                "dist/src/services/"
+                "src/base/traits/",
+                "src/base/components/",
+                "src/base/"
             ]
         }
     },
     "require": {
-        "doubleedesign/comet-standalone-launchpad": "0.0.2"
+        "doubleedesign/comet-components-launchpad": "0.0.2"
     }
 }
