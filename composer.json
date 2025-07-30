@@ -23,6 +23,6 @@
         }
     },
     "require": {
-        "doubleedesign/comet-components-launchpad": "0.0.2"
+        "doubleedesign/comet-components-launchpad": "dev-main"
     }
 }
