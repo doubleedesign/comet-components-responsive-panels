@@ -1,0 +1,10 @@
+.responsive-panels {
+  position: relative;
+}
+@media (prefers-reduced-motion) {
+  .responsive-panels [class^=panel-switch] {
+    transition: none;
+  }
+}
+
+/*# sourceMappingURL=responsive-panels.css.map */
