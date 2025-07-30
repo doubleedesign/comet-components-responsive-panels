@@ -1,9 +1,0 @@
-.responsive-panels {
-	position: relative;
-
-	@media (prefers-reduced-motion) {
-		[class^="panel-switch"] {
-			transition: none;
-		}
-	}
-}

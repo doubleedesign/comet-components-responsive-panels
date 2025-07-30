@@ -1,0 +1,66 @@
+{
+    "component": "ResponsivePanels",
+    "generated_at": "2025-07-30T02:44:45+00:00",
+    "files": [
+        {
+            "type": "directory",
+            "destination": "packages/core-standalone/responsive-panels/src/base"
+        },
+        {
+            "type": "directory",
+            "destination": "packages/core-standalone/responsive-panels/src/base/components"
+        },
+        {
+            "type": "file",
+            "destination": "packages/core-standalone/responsive-panels/src/base/components/PanelComponent.php",
+            "source": "packages/core/src/base/components/PanelComponent.php"
+        },
+        {
+            "type": "file",
+            "destination": "packages/core-standalone/responsive-panels/src/base/components/PanelGroupComponent.php",
+            "source": "packages/core/src/base/components/PanelGroupComponent.php"
+        },
+        {
+            "type": "directory",
+            "destination": "packages/core-standalone/responsive-panels/src/base/traits"
+        },
+        {
+            "type": "file",
+            "destination": "packages/core-standalone/responsive-panels/src/base/traits/ColorTheme.php",
+            "source": "packages/core/src/base/traits/ColorTheme.php"
+        },
+        {
+            "type": "file",
+            "destination": "packages/core-standalone/responsive-panels/src/base/traits/Icon.php",
+            "source": "packages/core/src/base/traits/Icon.php"
+        },
+        {
+            "type": "file",
+            "destination": "packages/core-standalone/responsive-panels/src/base/traits/LayoutOrientation.php",
+            "source": "packages/core/src/base/traits/LayoutOrientation.php"
+        },
+        {
+            "type": "directory",
+            "destination": "packages/core-standalone/responsive-panels/src/components"
+        },
+        {
+            "type": "directory",
+            "destination": "packages/core-standalone/responsive-panels/src/components/ResponsivePanels",
+            "source": "packages/core/src/components/ResponsivePanels"
+        },
+        {
+            "type": "directory",
+            "destination": "packages/core-standalone/responsive-panels/src/plugins"
+        },
+        {
+            "type": "directory",
+            "destination": "packages/core-standalone/responsive-panels/src/plugins/shared-vue-components",
+            "source": "packages/core/src/plugins/shared-vue-components"
+        },
+        {
+            "type": "directory",
+            "destination": "packages/core-standalone/responsive-panels/src/plugins/vue-wrapper",
+            "source": "packages/core/src/plugins/vue-wrapper"
+        }
+    ]
+}
