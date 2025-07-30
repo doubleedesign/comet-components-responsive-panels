@@ -13,23 +13,36 @@ composer require doubleedesign/comet-responsive-panels
 > [!INFO]
 > Like many libraries, this isn't 100% standalone - it uses some other libraries. There is one dependency, `doubleedesign/comet-components-launchpad`, which contains Comet Components Core's foundational classes and global CSS, and the dependencies for using Blade templates. This is so that if you use multiple standalone packages in your project, you don't end up with unnecessary duplication.
 
-Ensure your project loads dependencies using the autoloader:
+1. Ensure your project loads dependencies using the autoloader:
 
 ```php
 require_once __DIR__ . '/vendor/autoload.php';
 ```
 
-You will need to load the CSS and JS assets for the component into your project, however you usually do so. You will need:
+2. Tell it where to find the Blade templates, as early as possible so the config is there when you attempt to render components:
 
-- `/vendor/doubleedesign/comet-components-launchpad/dist/src/components/global.css`
-- `/vendor/doubleedesign/comet-responsive-panels/dist/src/components/responsive-panels.css`
-- `/vendor/doubleedesign/comet-responsive-panels/dist/src/components/responsive-panels.js`
+```php
+use Doubleedesign\Comet\Core\Config;
+
+Config::set_blade_component_paths([
+    __DIR__ . '\\vendor\\doubleedesign\\comet-responsive-panels\\src',
+]);
+```
+- You can also add your own custom paths here to override the provided Blade templates.
+- For a WordPress plugin, I place the above code in the root plugin file, right after the autoloader is included.
+- If you are adding to a WordPress theme, the `BladeService` is already configured to look in your active theme for files in a `components` directory in your theme root.
+
+3. Load the CSS and JS assets for the component into your project, however you usually do so. You will need:
+
+- `/vendor/doubleedesign/comet-components-launchpad/src/components/global.css`
+- `/vendor/doubleedesign/comet-responsive-panels/src/components/responsive-panels.css`
+- `/vendor/doubleedesign/comet-responsive-panels/src/components/responsive-panels.js`
 
 The JS file also needs to be specified as a module, and a base path given for the Vue loader to pick up. For example:
 
 ```html
 
-<script type="module" data-base-path="/vendor/doubleedesign/comet-responsive-panels/dist" src="/vendor/doubleedesign/comet-responsive-panels/dist/src/components/responsive-panels.js"></script>
+<script type="module" data-base-path="/vendor/doubleedesign/comet-responsive-panels/dist" src="/vendor/doubleedesign/comet-responsive-panels/src/components/responsive-panels.js"></script>
 ```
 
 An example of how you might set up the client-side assets in a WordPress plugin is:
@@ -45,9 +58,9 @@ class Frontend {
 	}
 	
 	public function load_frontend_assets(): void {
-		$depDir = '/wp-content/plugins/simple-document-portal/vendor/doubleedesign/comet-components-launchpad/dist/src';
-		$rootDir = '/wp-content/plugins/simple-document-portal/vendor/doubleedesign/comet-responsive-panels/dist/src';
-		$antiCacheVer = filemtime(WP_CONTENT_DIR . '/plugins/simple-document-portal/vendor/doubleedesign/comet-responsive-panels/dist/src/components/ResponsivePanels/responsive-panels.js');
+		$depDir = '/wp-content/plugins/simple-document-portal/vendor/doubleedesign/comet-components-launchpad/src';
+		$rootDir = '/wp-content/plugins/simple-document-portal/vendor/doubleedesign/comet-responsive-panels/src';
+		$antiCacheVer = filemtime(WP_CONTENT_DIR . '/plugins/simple-document-portal/vendor/doubleedesign/comet-responsive-panels/src/components/ResponsivePanels/responsive-panels.js');
 	
 		wp_enqueue_style('comet-global', $depDir . '/src/components/global.css', [], '0.0.2');
 		wp_enqueue_style('comet-responsive-panels', $rootDir . '/components/ResponsivePanels/responsive-panels.css', [], $antiCacheVer);
